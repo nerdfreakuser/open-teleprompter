@@ -1,6 +1,6 @@
 # Open Teleprompter
 
-**A free teleprompter for anyone on camera or on stage — pitches, podcasts, YouTube, auditions, and interviews.**
+**A free teleprompter for anyone on camera or on stage, pitches, podcasts, YouTube, auditions, and interviews.**
 
 Free, open-source desktop teleprompter for anyone who speaks on camera or on stage: founders, actors, podcasters, YouTubers, interviewees, educators, and presenters.
 
@@ -27,11 +27,11 @@ Free, open-source desktop teleprompter for anyone who speaks on camera or on sta
 
 ## Features
 
-- **Script mode** — paste or upload `.txt` / `.md`
-- **Local format** — short lines, speakers (`NAME:`), stage cues — works **offline**, no account
-- **Optional AI format** — uses **your** Anthropic API key only (never required)
-- **Prompter mode** — play / pause, speed, font size, mirror, fullscreen
-- **Keyboard** — Space, ↑↓ skip, ←→ speed
+- **Script mode** - paste or upload `.txt` / `.md`
+- **Local format** - short lines, speakers (`NAME:`), stage cues - works **offline**, no account
+- **Optional AI format** - uses **your** Anthropic API key only (never required)
+- **Prompter mode** - play / pause, speed, font size, mirror, fullscreen
+- **Keyboard** - Space, ↑↓ skip, ←→ speed
 - **Setup wizard** on first launch
 
 ### Security / privacy
@@ -40,7 +40,7 @@ Free, open-source desktop teleprompter for anyone who speaks on camera or on sta
 |------|----------------|
 | Scripts | Local machine only |
 | API key (optional) | Local only; encrypted with OS `safeStorage` when available |
-| AI requests | Directly to Anthropic when you click AI Format — **not** to any third-party product server |
+| AI requests | Directly to Anthropic when you click AI Format - **not** to any third-party product server |
 
 **This repository contains no API keys.** Never commit keys or `.env` files.
 
