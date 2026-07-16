@@ -1,14 +1,27 @@
-# Founder Teleprompter
+# Open Teleprompter
 
-**Karaoke for investor meetings — minus the bad singing.**
+**Karaoke for the camera — pitches, podcasts, YouTube, auditions, and interviews. Minus the bad singing.**
 
-Free, open-source desktop teleprompter for founders. Paste a pitch or video script, format it for reading, and scroll it on screen. Built for second screens, demo days, and practice runs.
+Free, open-source desktop teleprompter for anyone who speaks on camera or on stage: founders, actors, podcasters, YouTubers, interviewees, educators, and presenters.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/nerdfreakuser/founder-teleprompter)](https://github.com/nerdfreakuser/founder-teleprompter/releases)
+[![Release](https://img.shields.io/github/v/release/nerdfreakuser/open-teleprompter)](https://github.com/nerdfreakuser/open-teleprompter/releases)
 
-**Site:** [nerdfreakuser.github.io/founder-teleprompter](https://nerdfreakuser.github.io/founder-teleprompter/)  
-**Releases:** [Download Windows builds](https://github.com/nerdfreakuser/founder-teleprompter/releases)
+**Site:** [nerdfreakuser.github.io/open-teleprompter](https://nerdfreakuser.github.io/open-teleprompter/)  
+**Releases:** [Download Windows builds](https://github.com/nerdfreakuser/open-teleprompter/releases)
+
+---
+
+## Who it’s for
+
+| Use case | Example |
+|----------|---------|
+| **YouTube / creators** | Talking-head scripts, product videos |
+| **Podcasts** | Solo episodes, ad reads, show notes |
+| **Actors** | Audition sides, self-tapes, lines |
+| **Interviews** | Prepared answers, talking points |
+| **Founders / pitches** | Investor decks, demo days, webinars |
+| **Anyone else** | Courses, stand-ups, ceremonies |
 
 ---
 
@@ -25,9 +38,9 @@ Free, open-source desktop teleprompter for founders. Paste a pitch or video scri
 
 | Data | Where it goes |
 |------|----------------|
-| Scripts | Local machine only (`localStorage` / app storage) |
+| Scripts | Local machine only |
 | API key (optional) | Local only; encrypted with OS `safeStorage` when available |
-| AI requests | Directly to Anthropic when you click AI Format — **not** to RiseDrivers or this project’s servers |
+| AI requests | Directly to Anthropic when you click AI Format — **not** to any third-party product server |
 
 **This repository contains no API keys.** Never commit keys or `.env` files.
 
@@ -40,22 +53,22 @@ Free, open-source desktop teleprompter for founders. Paste a pitch or video scri
 | **Portable** | Run without installing |
 | **Setup** | Installer with shortcut |
 
-Get them from **[Releases](https://github.com/nerdfreakuser/founder-teleprompter/releases)**.
+Get them from **[Releases](https://github.com/nerdfreakuser/open-teleprompter/releases)**.
 
-> **Note:** Builds are currently **unsigned**. Windows SmartScreen or Chrome may warn. That is expected until a code-signing certificate is added. Prefer building from source if you prefer.
+> **Note:** Builds may be **unsigned**. Windows SmartScreen or Chrome may warn until a code-signing certificate is added. Building from source is always an option.
 
 ---
 
 ## Run from source
 
 ```bash
-git clone https://github.com/nerdfreakuser/founder-teleprompter.git
-cd founder-teleprompter
+git clone https://github.com/nerdfreakuser/open-teleprompter.git
+cd open-teleprompter
 npm install
 npm start
 ```
 
-Requirements: Node.js 18+, Windows recommended for the packaged app (Electron runs on other OSes for development).
+Requirements: Node.js 18+. Windows recommended for packaged builds (Electron runs on other OSes for development).
 
 ### Build installers (Windows)
 
@@ -90,12 +103,6 @@ Without a key, use **Format (local)** or paste a pre-formatted script.
 ## Contributing
 
 PRs and issues welcome. Keep secrets out of the repo. See [SECURITY.md](SECURITY.md).
-
----
-
-## Credits
-
-Originally built for founders around the RiseDrivers community. This project is **standalone and open source** — not a dependency of any paid product.
 
 ---
 

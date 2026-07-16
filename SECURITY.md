@@ -12,4 +12,4 @@ Optional AI features use a key the **end user** enters in the app. That key stay
 
 ## Reporting issues
 
-Open a [GitHub issue](https://github.com/nerdfreakuser/founder-teleprompter/issues) for vulnerabilities or concerns. Do not post secrets in issues.
+Open a [GitHub issue](https://github.com/nerdfreakuser/open-teleprompter/issues) for vulnerabilities or concerns. Do not post secrets in issues.

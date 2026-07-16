@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Founder Teleprompter — free open-source pitch teleprompter</title>
+    <title>Open Teleprompter — free teleprompter for creators</title>
     <meta
       name="description"
-      content="Karaoke for investor meetings — minus the bad singing. Free open-source desktop teleprompter for founders."
+      content="Karaoke for the camera — pitches, podcasts, YouTube, auditions, and interviews. Free open-source desktop teleprompter."
     />
     <meta name="theme-color" content="#0f0d0b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -131,6 +131,21 @@
         color: var(--muted);
         margin-top: 10px;
       }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 12px 0 0;
+      }
+      .chip {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.03);
+      }
       footer {
         margin-top: 40px;
         padding-top: 20px;
@@ -141,7 +156,6 @@
       footer a {
         color: var(--accent);
       }
-      /* Ad slot placeholder — paste AdSense snippet when approved */
       .ad-slot {
         margin: 28px 0;
         min-height: 90px;
@@ -160,23 +174,33 @@
   <body>
     <div class="wrap">
       <div class="pill">Free · Open source · MIT</div>
-      <h1>Founder Teleprompter</h1>
-      <p class="tagline">Karaoke for investor meetings — minus the bad singing.</p>
+      <h1>Open Teleprompter</h1>
+      <p class="tagline">
+        Karaoke for the camera — minus the bad singing.
+      </p>
       <p class="lead">
-        A free desktop teleprompter for pitches, demo days, and video scripts.
+        Free desktop teleprompter for anyone who speaks on camera or on stage.
         Works offline. Optional AI formatting uses <em>your</em> API key only —
         never required, never shipped in the code.
       </p>
+      <div class="chips">
+        <span class="chip">YouTube</span>
+        <span class="chip">Podcasts</span>
+        <span class="chip">Actors</span>
+        <span class="chip">Interviews</span>
+        <span class="chip">Pitches</span>
+        <span class="chip">Presentations</span>
+      </div>
 
-      <div class="actions">
+      <div class="actions" style="margin-top: 28px">
         <a
           class="btn btn-primary"
-          href="https://github.com/nerdfreakuser/founder-teleprompter/releases/latest"
+          href="https://github.com/nerdfreakuser/open-teleprompter/releases/latest"
           >Download for Windows</a
         >
         <a
           class="btn btn-ghost"
-          href="https://github.com/nerdfreakuser/founder-teleprompter"
+          href="https://github.com/nerdfreakuser/open-teleprompter"
           >View source on GitHub</a
         >
       </div>
@@ -204,14 +228,14 @@
         <ul>
           <li>
             <strong>Windows portable + installer</strong> —
-            <a href="https://github.com/nerdfreakuser/founder-teleprompter/releases"
+            <a href="https://github.com/nerdfreakuser/open-teleprompter/releases"
               >GitHub Releases</a
             >
           </li>
           <li>
             <strong>Full source</strong> —
-            <a href="https://github.com/nerdfreakuser/founder-teleprompter"
-              >github.com/nerdfreakuser/founder-teleprompter</a
+            <a href="https://github.com/nerdfreakuser/open-teleprompter"
+              >github.com/nerdfreakuser/open-teleprompter</a
             >
           </li>
         </ul>
@@ -227,20 +251,21 @@
         <ul>
           <li>No API keys in the repository</li>
           <li>Scripts stay on your machine</li>
-          <li>Your optional AI key is stored locally and only sent to the AI provider when you use AI Format</li>
+          <li>
+            Your optional AI key is stored locally and only sent to the AI
+            provider when you use AI Format
+          </li>
         </ul>
       </div>
 
       <footer>
         MIT licensed.
-        <a href="https://github.com/nerdfreakuser/founder-teleprompter"
-          >Source</a
-        >
+        <a href="https://github.com/nerdfreakuser/open-teleprompter">Source</a>
         ·
-        <a href="https://github.com/nerdfreakuser/founder-teleprompter/releases"
+        <a href="https://github.com/nerdfreakuser/open-teleprompter/releases"
           >Releases</a
         >
-        · Standalone open-source project (not part of any paid product codebase).
+        · Free open-source tool for creators and speakers.
       </footer>
     </div>
   </body>

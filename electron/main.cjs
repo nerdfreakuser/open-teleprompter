@@ -3,7 +3,7 @@ const path = require("path");
 const Store = require("electron-store");
 
 const store = new Store({
-  name: "risedrivers-teleprompter",
+  name: "open-teleprompter",
   defaults: {
     setupComplete: false,
     preferredProvider: "anthropic",
@@ -58,7 +58,7 @@ function createWindow() {
     height: 720,
     minWidth: 420,
     minHeight: 480,
-    title: "Founder Teleprompter",
+    title: "Open Teleprompter",
     backgroundColor: "#111214",
     show: false,
     webPreferences: {

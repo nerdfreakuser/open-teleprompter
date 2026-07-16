@@ -1,4 +1,4 @@
-/* RiseDrivers Teleprompter — renderer (no Node). IPC via window.teleprompter */
+/* Open Teleprompter — renderer (no Node). IPC via window.teleprompter */
 
 const ACCENT = "#9CFF6E";
 const BASE_PX_PER_SEC = 35;
