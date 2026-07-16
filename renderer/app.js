@@ -1,4 +1,4 @@
-/* Open Teleprompter — renderer (no Node). IPC via window.teleprompter */
+/* Open Teleprompter - renderer (no Node). IPC via window.teleprompter */
 
 const ACCENT = "#9CFF6E";
 const BASE_PX_PER_SEC = 35;
@@ -9,7 +9,7 @@ const $ = (id) => document.getElementById(id);
 
 /** @typedef {{ type: 'speaker'|'line'|'pause'|'direction', text: string, seconds?: number }} ScriptLine */
 
-// —— Script helpers ——
+// - - Script helpers - - 
 function countWords(text) {
   const t = (text || "").trim();
   return t === "" ? 0 : t.split(/\s+/).length;
@@ -119,7 +119,7 @@ function parseAIResponse(resp, fallbackText) {
     }));
 }
 
-// —— State ——
+// - - State - - 
 const state = {
   mode: "script",
   rawText: "",
@@ -144,7 +144,7 @@ let rafId = null;
 let countdownTimeout = null;
 let lastProgressUpdate = 0;
 
-// —— Persist script ——
+// - - Persist script - - 
 function loadScript() {
   try {
     const raw = localStorage.getItem(SCRIPT_KEY);
@@ -176,7 +176,7 @@ function saveScript() {
   }
 }
 
-// —— Wizard ——
+// - - Wizard - - 
 let wizStep = 0;
 function showWizard(show) {
   $("wizard").classList.toggle("hidden", !show);
@@ -196,7 +196,7 @@ function renderWizard() {
     const key = ($("wiz-key").value || "").trim();
     $("wiz-summary").textContent = key
       ? "AI Format enabled with your Anthropic key (stored on this device only)."
-      : "Running without AI — use Format (local) or paste a ready-made script.";
+      : "Running without AI - use Format (local) or paste a ready-made script.";
   }
 }
 
@@ -213,7 +213,7 @@ async function finishWizard(skipKey) {
   renderScriptUI();
 }
 
-// —— UI bind ——
+// - - UI bind - - 
 function updateKeyBadge() {
   const b = $("key-badge");
   if (state.hasApiKey) {
@@ -317,7 +317,7 @@ function renderStage() {
   $("btn-play").textContent = state.playing ? "❚❚" : "▶";
 }
 
-// —— Playback ——
+// - - Playback - - 
 function updateProgressNow() {
   const el = stageEl();
   if (!el) return;
@@ -462,7 +462,7 @@ function openPrompter() {
   setMode("prompter");
 }
 
-// —— Events ——
+// - - Events - - 
 function wire() {
   $("wiz-next").onclick = async () => {
     if (wizStep < 2) {
@@ -481,7 +481,7 @@ function wire() {
   };
   $("link-anthropic").onclick = (e) => {
     e.preventDefault();
-    // open handled by setWindowOpenHandler if target blank — use shell via default
+    // open handled by setWindowOpenHandler if target blank - use shell via default
     window.open("https://console.anthropic.com/", "_blank");
   };
 

@@ -128,7 +128,7 @@ ipcMain.handle("settings:skipWizard", () => {
 
 /**
  * Optional AI format. Key is read only in main process and sent straight to
- * the provider — never to RiseDrivers servers.
+ * the provider - never to RiseDrivers servers.
  */
 ipcMain.handle("ai:formatScript", async (_e, { rawText, keepDirections }) => {
   const key = getApiKey();

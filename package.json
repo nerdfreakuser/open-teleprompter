@@ -1,7 +1,7 @@
 {
   "name": "open-teleprompter",
   "version": "1.0.0",
-  "description": "Free open-source teleprompter for creators — pitches, podcasts, YouTube, auditions, and interviews.",
+  "description": "Free open-source teleprompter for creators - pitches, podcasts, YouTube, auditions, and interviews.",
   "main": "electron/main.cjs",
   "author": "Open Teleprompter contributors",
   "license": "MIT",
