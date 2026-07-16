@@ -1,6 +1,6 @@
 # Open Teleprompter
 
-**Karaoke for the camera — pitches, podcasts, YouTube, auditions, and interviews. Minus the bad singing.**
+**A free teleprompter for anyone on camera or on stage — pitches, podcasts, YouTube, auditions, and interviews.**
 
 Free, open-source desktop teleprompter for anyone who speaks on camera or on stage: founders, actors, podcasters, YouTubers, interviewees, educators, and presenters.
 
