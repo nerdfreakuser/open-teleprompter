@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Founder Teleprompter — free open-source pitch teleprompter</title>
+    <meta
+      name="description"
+      content="Karaoke for investor meetings — minus the bad singing. Free open-source desktop teleprompter for founders."
+    />
+    <meta name="theme-color" content="#0f0d0b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f0d0b;
+        --card: #17140f;
+        --text: #f0ebe2;
+        --muted: #9a9081;
+        --accent: #f5a623;
+        --green: #9cff6e;
+        --border: #2b2620;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        min-height: 100vh;
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(245, 166, 35, 0.35);
+        background: rgba(245, 166, 35, 0.12);
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+      h1 {
+        font-family: Sora, Inter, sans-serif;
+        font-size: clamp(1.85rem, 5vw, 2.5rem);
+        line-height: 1.15;
+        margin: 16px 0 10px;
+        letter-spacing: -0.02em;
+      }
+      .tagline {
+        color: var(--green);
+        font-weight: 600;
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin-bottom: 28px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+      a.btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        transition: transform 0.15s, border-color 0.15s;
+      }
+      a.btn:hover {
+        transform: translateY(-1px);
+      }
+      a.btn-primary {
+        background: var(--accent);
+        color: #1a1408;
+      }
+      a.btn-ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: var(--card);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 22px;
+        margin-bottom: 16px;
+      }
+      .card h2 {
+        font-family: Sora, Inter, sans-serif;
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+      }
+      .card ul {
+        margin-left: 1.1rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .card li {
+        margin: 6px 0;
+      }
+      .card strong {
+        color: var(--text);
+      }
+      .note {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+      footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      footer a {
+        color: var(--accent);
+      }
+      /* Ad slot placeholder — paste AdSense snippet when approved */
+      .ad-slot {
+        margin: 28px 0;
+        min-height: 90px;
+        border: 1px dashed var(--border);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="pill">Free · Open source · MIT</div>
+      <h1>Founder Teleprompter</h1>
+      <p class="tagline">Karaoke for investor meetings — minus the bad singing.</p>
+      <p class="lead">
+        A free desktop teleprompter for pitches, demo days, and video scripts.
+        Works offline. Optional AI formatting uses <em>your</em> API key only —
+        never required, never shipped in the code.
+      </p>
+
+      <div class="actions">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/nerdfreakuser/founder-teleprompter/releases/latest"
+          >Download for Windows</a
+        >
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/nerdfreakuser/founder-teleprompter"
+          >View source on GitHub</a
+        >
+      </div>
+
+      <!--
+        Google AdSense: replace this block with your official ad unit snippet
+        after site approval. Keep ads on the landing page only, not inside the app.
+      -->
+      <div class="ad-slot" aria-hidden="true">
+        Ad space reserved — connect Google AdSense when the property is approved
+      </div>
+
+      <div class="card">
+        <h2>What you get</h2>
+        <ul>
+          <li><strong>Script + prompter modes</strong> — paste, format, scroll</li>
+          <li><strong>Local format</strong> — no account, no key</li>
+          <li><strong>Optional AI format</strong> — Anthropic key you paste in Settings</li>
+          <li><strong>Speed, mirror, fullscreen</strong> — second-screen ready</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Downloads &amp; source</h2>
+        <ul>
+          <li>
+            <strong>Windows portable + installer</strong> —
+            <a href="https://github.com/nerdfreakuser/founder-teleprompter/releases"
+              >GitHub Releases</a
+            >
+          </li>
+          <li>
+            <strong>Full source</strong> —
+            <a href="https://github.com/nerdfreakuser/founder-teleprompter"
+              >github.com/nerdfreakuser/founder-teleprompter</a
+            >
+          </li>
+        </ul>
+        <p class="note">
+          Builds may be unsigned. Windows or Chrome can show a warning until a
+          code-signing certificate is used. Building from source is always an
+          option.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Privacy</h2>
+        <ul>
+          <li>No API keys in the repository</li>
+          <li>Scripts stay on your machine</li>
+          <li>Your optional AI key is stored locally and only sent to the AI provider when you use AI Format</li>
+        </ul>
+      </div>
+
+      <footer>
+        MIT licensed.
+        <a href="https://github.com/nerdfreakuser/founder-teleprompter"
+          >Source</a
+        >
+        ·
+        <a href="https://github.com/nerdfreakuser/founder-teleprompter/releases"
+          >Releases</a
+        >
+        · Standalone open-source project (not part of any paid product codebase).
+      </footer>
+    </div>
+  </body>
+</html>

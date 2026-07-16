@@ -1,0 +1,74 @@
+{
+  "name": "founder-teleprompter",
+  "version": "1.0.0",
+  "description": "Free open-source pitch teleprompter for founders — karaoke for investor meetings, minus the bad singing.",
+  "main": "electron/main.cjs",
+  "author": "RiseDrivers contributors",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nerdfreakuser/founder-teleprompter.git"
+  },
+  "homepage": "https://nerdfreakuser.github.io/founder-teleprompter/",
+  "bugs": {
+    "url": "https://github.com/nerdfreakuser/founder-teleprompter/issues"
+  },
+  "keywords": [
+    "teleprompter",
+    "pitch",
+    "founder",
+    "startup",
+    "electron",
+    "open-source"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.founderteleprompter.app",
+    "productName": "Founder Teleprompter",
+    "copyright": "Copyright © Founder Teleprompter contributors",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Founder Teleprompter"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.exe"
+    }
+  }
+}

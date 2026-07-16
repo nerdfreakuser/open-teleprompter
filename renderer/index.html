@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src 'none';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Founder Teleprompter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Setup wizard -->
+    <div id="wizard" class="wizard hidden">
+      <div class="wizard-card">
+        <div class="wiz-brand">FOUNDER TELEPROMPTER · FREE &amp; OPEN SOURCE</div>
+        <div id="wiz-steps" class="wiz-steps">
+          <span data-step="0" class="on">1</span>
+          <span data-step="1">2</span>
+          <span data-step="2">3</span>
+        </div>
+
+        <section class="wiz-pane" data-pane="0">
+          <h1>Welcome, founder.</h1>
+          <p class="lead">
+            Karaoke for investor meetings — minus the bad singing.
+          </p>
+          <p>
+            This is a <strong>standalone app</strong> on your machine. Use it on
+            a second screen, offline, or anywhere you pitch. Your scripts stay
+            local.
+          </p>
+          <ul class="bullets">
+            <li>Scroll a pitch or video script on screen</li>
+            <li>Speed, font size, mirror, fullscreen</li>
+            <li>AI formatting is <em>optional</em> — only if you add your own key</li>
+          </ul>
+        </section>
+
+        <section class="wiz-pane hidden" data-pane="1">
+          <h1>Optional: AI formatting</h1>
+          <p class="lead">
+            Non-essential. Without a key, paste a script already broken into
+            short lines (or use <strong>Format (local)</strong>).
+          </p>
+          <p class="safe-note">
+            If you add a key, it is stored <strong>only on this device</strong>
+            (encrypted when the OS allows). It is sent only to Anthropic when
+            you click AI Format — never to RiseDrivers.
+          </p>
+          <label class="field">
+            <span>Anthropic API key (optional)</span>
+            <input
+              id="wiz-key"
+              type="password"
+              placeholder="sk-ant-… leave blank to skip"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </label>
+          <p class="hint">
+            Get a key at
+            <a href="https://console.anthropic.com/" id="link-anthropic"
+              >console.anthropic.com</a
+            >
+            — you pay Anthropic directly.
+          </p>
+        </section>
+
+        <section class="wiz-pane hidden" data-pane="2">
+          <h1>You're set.</h1>
+          <p class="lead" id="wiz-summary">Ready to prompt.</p>
+          <ul class="bullets">
+            <li><kbd>Space</kbd> play / pause · <kbd>↑↓</kbd> skip · <kbd>←→</kbd> speed</li>
+            <li>Change or remove your API key anytime in Settings</li>
+            <li>Drag this window to a second display for the room</li>
+          </ul>
+        </section>
+
+        <div class="wiz-actions">
+          <button type="button" id="wiz-back" class="btn ghost hidden">Back</button>
+          <button type="button" id="wiz-skip" class="btn ghost">Skip setup</button>
+          <button type="button" id="wiz-next" class="btn primary">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main app -->
+    <div id="app" class="app hidden">
+      <header class="titlebar">
+        <div class="title-left">
+          <span class="dot"></span>
+          <span class="title">TELEPROMPTER</span>
+          <span id="key-badge" class="badge">Local only</span>
+        </div>
+        <div class="title-right">
+          <button type="button" id="tab-script" class="tab on">SCRIPT</button>
+          <button type="button" id="tab-prompter" class="tab">PROMPTER</button>
+          <button type="button" id="btn-settings" class="icon-btn" title="Settings">⚙</button>
+        </div>
+      </header>
+
+      <!-- Settings drawer -->
+      <div id="settings" class="settings hidden">
+        <h2>Settings</h2>
+        <p class="safe-note">
+          API key never leaves this computer except when you run AI Format
+          (sent to Anthropic only).
+        </p>
+        <label class="field">
+          <span>Anthropic API key</span>
+          <input
+            id="set-key"
+            type="password"
+            placeholder="sk-ant-… or leave blank"
+            autocomplete="off"
+          />
+        </label>
+        <div class="row gap">
+          <button type="button" id="set-save" class="btn primary">Save key</button>
+          <button type="button" id="set-clear" class="btn ghost">Clear key</button>
+          <button type="button" id="set-close" class="btn ghost">Close</button>
+        </div>
+        <p id="set-status" class="hint"></p>
+        <p class="hint" id="set-version"></p>
+      </div>
+
+      <main id="view-script" class="view script-view">
+        <section class="panel">
+          <h3>INPUT SCRIPT</h3>
+          <textarea
+            id="raw"
+            placeholder="Paste your pitch or video script here…"
+          ></textarea>
+          <div class="row wrap">
+            <label class="file-btn">
+              UPLOAD .TXT
+              <input type="file" id="file" accept=".txt,.md,text/plain" hidden />
+            </label>
+            <span id="file-name" class="muted">No file</span>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="keep-dir" checked />
+            Keep stage directions as cues
+          </label>
+          <div class="row between wrap">
+            <span id="stats" class="ok">0 words</span>
+            <div class="row gap">
+              <button type="button" id="btn-local" class="btn secondary">
+                Format (local)
+              </button>
+              <button type="button" id="btn-ai" class="btn primary" disabled title="Add an API key in Settings">
+                AI Format
+              </button>
+            </div>
+          </div>
+          <p id="format-error" class="error hidden"></p>
+        </section>
+        <section class="panel">
+          <div class="row between">
+            <h3>PREVIEW</h3>
+            <button type="button" id="btn-open-prompter" class="btn primary">
+              Open prompter →
+            </button>
+          </div>
+          <div id="preview" class="preview"></div>
+        </section>
+      </main>
+
+      <main id="view-prompter" class="view prompter-view hidden">
+        <div class="stage-wrap">
+          <div class="focus-band"></div>
+          <div class="stage-fade"></div>
+          <div id="stage" class="stage"></div>
+          <div id="countdown" class="countdown hidden"></div>
+        </div>
+        <footer class="controls">
+          <div id="progress" class="progress"><i id="progress-fill"></i></div>
+          <div class="row wrap controls-row">
+            <button type="button" id="btn-play" class="play" title="Play / pause">▶</button>
+            <button type="button" id="btn-reset" class="icon-btn" title="Reset">↺</button>
+            <span id="time-left" class="muted">0:00</span>
+            <label class="muted tiny">
+              Speed
+              <input type="range" id="speed" min="0.2" max="3" step="0.1" value="1" />
+              <span id="speed-val">1.0x</span>
+            </label>
+            <button type="button" id="btn-font-down" class="icon-btn">A−</button>
+            <button type="button" id="btn-font-up" class="icon-btn">A+</button>
+            <button type="button" id="btn-mirror" class="icon-btn">Mirror</button>
+            <button type="button" id="btn-fs" class="icon-btn">Full</button>
+            <button type="button" id="btn-back-script" class="icon-btn ml-auto">← Script</button>
+          </div>
+          <p class="tiny muted">Space play · ↑↓ skip · ←→ speed</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
